@@ -10,9 +10,10 @@ window.onscroll = function () {
   lastPost = top;
   frames.forEach((n, i) => {
     zVals.push(i * zSpacing + zSpacing);
-    zVals[i] += delta * -5;
+    zVals[i] += delta * -5.5;
     let frame = frames[i];
-    let transform = `translateZ(${zVals[i]}px`;
-    frame.setAttribute("style", `transform: ${transform}`);
+    let transform = `translateZ(${zVals[i]}px)`;
+    let opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
+    frame.setAttribute("style", `transform: ${transform}; opacity: ${opacity}`);
   });
 };

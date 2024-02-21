@@ -10,8 +10,15 @@
   --side-small: 26px;
   --sizebig: 36px;
   --depth: 4000px;
+  --transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
 }
-
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
 @font-face {
   font-family: raleway_c;
   src: url(../fonts/raleway-v22-cyrillic-300.woff2);
@@ -29,6 +36,7 @@ body {
   font-family: raleway_c, sans-serif;
   line-height: 1.75;
   height: var(--depth);
+  font-weight: 300;
 }
 
 .container {
@@ -50,4 +58,20 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
+  transition: var(--transition) 0.75 ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.frame h2 {
+  text-align: center;
+  font-size: calc(var(--index) * 3.3);
+}
+
+.frame_media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
 }
