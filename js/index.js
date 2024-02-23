@@ -11,7 +11,8 @@ window.onload = function () {
     lastPost = top;
 
     frames.forEach((n, i) => {
-      zVals[i] = i * zSpacing + zSpacing + lastPost * +5.5;
+      zVals.push(i * zSpacing + zSpacing);
+      zVals[i] += delta * -5;
       frame = frames[i];
       transform = `translateZ(${zVals[i]}px)`;
       opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
@@ -22,7 +23,7 @@ window.onload = function () {
     });
   };
 
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 20);
 
   let soundButton = document.querySelector(".soundbutton"),
     audio = document.querySelector(".audio");
