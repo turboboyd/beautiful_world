@@ -22,7 +22,7 @@ window.onload = function () {
     });
   };
 
-  window.scrollTo(0, 1);
+  window.scrollTo(0, 0);
 
   let soundButton = document.querySelector(".soundbutton"),
     audio = document.querySelector(".audio");
